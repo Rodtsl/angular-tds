@@ -1,4 +1,4 @@
-var myApp = angular.module('myApp',[]);
+var myApp = angular.module('mainApp',[]);
 
 myApp.controller('CarreController', [function() {
     this.value=0;
