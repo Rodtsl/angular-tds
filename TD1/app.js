@@ -23,7 +23,7 @@ var server_ip_address = process.env.OPENSHIFT_NODEJS_IP||  '127.0.0.1';
 
 /** ROUTAGE **/
 app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
+  res.sendFile(__dirname + '/html/index.html');
   app.use(express.static('public'));
 });
 /*app.get('/index', function (req, res) {

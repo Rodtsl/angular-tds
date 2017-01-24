@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="HelloApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Hello</title>
+    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../bootstrap/css/plateau.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="app.js"></script>
+
+</head>
+<body>
+  <h2>Ex1 :</h2>
+
+
+  <h2>Exemple 1</h2>
+    <div ng-controller="HelloController as hello">
+        <input type="text" ng-model="hello.message">
+        <br> Message : {{hello.message}}
+    </div>
+    <div ng-app="" ng-init="prenom='Maurice'">
+    <h2>Exemple 2</h2>
+      <p>Prénom : <input type="text" ng-model="prenom"></p>
+      <p>Vous avez saisi : {{ prenom }}</p>
+
+    </div>
+  <h2>Exemple 3</h2>
+    <div ng-init="clients=[
+    {id:1,nom:'Heidi',pays:'Norvège'},
+    {id:2,nom:'Hans',pays:'Allemagne'},
+    {id:3,nom:'Maurice',pays:'France'}]">
+        <div ng-repeat="client in clients">
+            <label><input type="radio" ng-value="client.id" name="client">{{ client.nom + ', ' + client.pays }}</label>
+        </div>
+    </div>
+  <h2>Exemple 4</h2>
+<p><p>Vous avez saisi : {{ prenom | uppercase}}</p></p>
+
+<span>
+  1+2={{1+2 || currency}}
+</span>
+
+<h2>Exemple 5</h2>
+
+<fieldset data-ng-app="myApp" data-ng-controller="CarreController">
+    <legend>Carré</legend>
+    <input type="text" data-ng-model="value" data-ng-controller="CarreController as Carre">
+    <div>Carré : {{Carre.carre(value)}}</div>
+</fieldset>
+
+    <script>
+        angular.module("HelloApp",[]).controller("HelloController",function(){this.message="Hello world";});
+    </script>
+    <script type="text/javascript" src="../javascript/apps.js"></script>
+</body>
+</html>
