@@ -1,6 +1,14 @@
-var myApp = angular.module('mainApp',[]);
+var mainApp = angular.module('mainApp',[]);
 
-myApp.controller('CarreController', [function() {
-    this.value=0;
-    this.carre = function(value) { return value * value; };
-}]);
+mainApp.controller('textController', function() {
+
+    var self=this;
+    this.messageNote ="";
+    this.count=function(){
+
+    return self.messageNote.lenght;
+
+
+
+    };
+});

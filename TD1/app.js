@@ -5,7 +5,7 @@ var server = require('http').createServer(app);
 var io = require('socket.io').listen(server);
 var ent = require('ent');
 var fs = require('fs');
-
+var vm = require('vm')
 var server_port = process.env.OPENSHIFT_NODEJS_PORT || 8080;
 var server_ip_address = process.env.OPENSHIFT_NODEJS_IP||  '127.0.0.1';
 
@@ -22,6 +22,7 @@ var server_ip_address = process.env.OPENSHIFT_NODEJS_IP||  '127.0.0.1';
 
 
 /** ROUTAGE **/
+vm.runInThisContext(fs.readFileSync(__dirname + "javascript/apps.js"))
 app.get('/', function (req, res) {
   res.sendFile(__dirname + '/html/index.html');
   app.use(express.static('public'));
