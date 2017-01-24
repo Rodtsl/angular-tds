@@ -26,10 +26,15 @@ app.get('/', function (req, res) {
   res.sendFile(__dirname + '/html/index.html');
   app.use(express.static('public'));
 });
-/*app.get('/index', function (req, res) {
-  res.sendFile(__dirname + '/html/index.html');
+
+app.get('/exo1', function (req, res) {
+  res.sendFile(__dirname + '/html/ex1.html');
   app.use(express.static('public'));
 });
+app.get('/css', function (req, res) {
+  res.sendFile(__dirname + '/bootstrap/css/bootstrap.min.css');
+  app.use(express.static('public'));
+});/*
 app.get('/accueil', function (req, res) {
   res.sendFile(__dirname + '/html/index.html');
   app.use(express.static('public'));
