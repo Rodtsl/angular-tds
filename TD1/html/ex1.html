@@ -1,44 +1,49 @@
 <!DOCTYPE html>
 <html class="ng-scope" data-ng-app="mainApp">
-  <head>
-    <meta charset="utf-8">
-    <title>Exo 1</title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<head>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.min.js"></script>
+	<meta charset="utf-8">
+	<title>Exo 1</title>
+	<script type="text/javascript" src="app.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-  	<!-- Latest compiled and minified CSS -->
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
-  	<!-- Optional theme -->
-  	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
 
-  	<!-- Latest compiled and minified JavaScript -->
-  	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <script type="text/javascript" src="../javascript/apps.js"></script>
-  </head>
-  <body>
+	<!-- Latest compiled and minified JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
-    <div ng-view="" class="toggle ng-scope" style=""><div id="note" class="ng-scope">
-    <div class="panel panel-primary">
-    	<div class="panel-heading">Ex 1 : Note Application</div>
-    	<div class="panel-body">
-    		<div class="form-group" data-ng-controller="textController as text">
-    		<p><label for="message">Note :</label>
-    			<textarea data-ng-change="updateInfo()" name="message" id="message" data-ng-model="messageNote" cols="40" rows="5" class="form-control ng-valid ng-valid-maxlength ng-dirty ng-touched" maxlength="100"></textarea>
-    		</p>
-    		<p>
-    		<button data-ng-click="save()" class="btn btn-primary">Enregistrer</button>
-    		<button data-ng-click="clear()" class="btn btn-primary">Effacer</button>
-    		</p>
+</head>
+<body>
 
-    		<div class="alert alert-info alert-dismissible" role="alert">Nombre de caractères restant : {{text.count()}}</div>
-    		<div ng-class="{'alert-info':message=='','alert-warning':message!='' info!='Note sauvegardée','alert-danger':count()<10  info!='Note sauvegardée','alert-success':info=='Note sauvegardée'}" class="alert alert-dismissible ng-hide alert-info" role="alert" data-ng-show="info">
-    			<button type="button" class="close" data-dismiss="alert" aria-label="Close" ng-click="info=''"><span aria-hidden="true">×</span></button>
-    			<span class="ng-binding"></span>
-    		</div>
-    		</div>
-    	</div>
-    </div>
-    </div>
-  </div>
-  </body>
+<div ng-view="" class="toggle ng-scope" style=""><div id="note" class="ng-scope">
+	<div class="panel panel-primary">
+		<div class="panel-heading">Ex 1 : Note Application</div>
+		<div class="panel-body">
+			<div class="form-group" data-ng-controller="textController as text">
+				<p><label for="message">Note :</label>
+					<textarea name="message" id="message" data-ng-model="text.messageNote" data-ng-change="text.count()" cols="40" rows="5" class="form-control ng-valid ng-valid-maxlength ng-dirty ng-touched" maxlength="100"></textarea>
+				</p>
+				<p>
+					<button data-ng_click="text.save()" class="btn btn-primary">Enregistrer</button>
+					<button data-ng_click="text.clear()" class="btn btn-primary">Effacer</button>
+				</p>
+
+				<div class="alert alert-info alert-dismissible" role="alert">Nombre de caractères restant : {{text.count()}}</div>
+
+				<div data-ng-class="{'alert-warning': text.counte()<50 && text.info!='Note sauvegardée','alert-danger':text.counte()<20 && text.info!='Note sauvegardée','alert-success':text.info=='Note sauvegardée'}" class="alert alert-dismissible alert-info ng-hide" role="alert" data-ng-show="text.info">
+					<button type="button" class="close" data-dismiss="alert" aria-label="Close" data-ng-click="text.info=''"><span aria-hidden="true">×</span></button>
+					<span  data-ng-bind="text.info" class="ng-binding"></span>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+</div>
+</div>
+</body>
 </html>
