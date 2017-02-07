@@ -1,1 +1,1 @@
-var ServiceApp = angular.module("ServiceApp",[]);
+var ServiceApp = anguar.module("ServiceApp",[]);
