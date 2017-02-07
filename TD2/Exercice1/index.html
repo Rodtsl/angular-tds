@@ -19,8 +19,48 @@
 
 </head>
 <body>
-    <div ng-controller="ListeController as Ctrl">
+<div class="app" ng-show="listesCtrl.step==1">
+    <h2 class="shadow">Séléctionnez vos produits</h2>
 
-    
+    <div class="form-group" ng-init="selectedItem.length=0;selectedItem2.length=0">
+
+        <div class="inline">
+            <label>Produits disponibles :
+                <select title="Double-cliquez pour ajouter" class="form-control" size="10" multiple="multiple" ng-model="selectedItem" ng-dblclick="listesCtrl.ajouter(selectedItem)" ng-options="dispoItem as dispoItem.title for dispoItem in listesCtrl.dispoItems" ng-click="listesCtrl.select(selectedItem)">
+                </select></label></div>
+        <div class="inline">
+            <div title="Ajouter" class="btn btn-primary list-btn" ng-disabled="selectedItem.length<1" ng-click="listesCtrl.ajouter(selectedItem)"><span aria-hidden="true" class="glyphicon glyphicon-step-forward" ></span></div><br>
+
+            <div title="AjouterTout" class="btn btn-primary list-btn" ng-disabled="listesCtrl.dispoItems.length<1" ng-click="listesCtrl.ajouterTous()"><span aria-hidden="true" class="glyphicon glyphicon-fast-forward"></span></div><br>
+
+            <div title="Retirer" class="btn btn-primary list-btn" ng-disabled="listesCtrl.includeItems.length<1" ng-click="listesCtrl.retirer(selectedItem2)"><span aria-hidden="true" class="glyphicon glyphicon-step-backward"></span></div><br>
+
+            <div title="RetirerTout" class="btn btn-primary list-btn" ng-disabled="listesCtrl.includeItems.length<1" ng-click="listesCtrl.retirerTous()"><span aria-hidden="true" class="glyphicon glyphicon-fast-backward"></span></div><br>
+        </div>
+        <div class="inline">
+            <label>Produits à inclure : <select title="Double-cliquez pour ajouter" class="form-control" size="10" multiple="multiple" ng-model="selectedItem2" ng-dblclick="listesCtrl.retirer(selectedItem2)" ng-options="includeItem as includeItem.title for includeItem in listesCtrl.includeItems" ng-click="listesCtrl.select2(selectedItem2)">
+            </select>
+            </label>
+        </div>
     </div>
+    <ng-pluralize count="listesCtrl.includeItems.length" when="{'0': 'Aucun produit à inclure',
+                       'one': '1 produit inclus',
+                       'other': '{} produits inclus'}"></ng-pluralize>
+    <div class="btn btn-primary" ng-disabled="listesCtrl.includeItems.length==0" ng-click="listesCtrl.changeView()" ><span>Etape suivante </span><span aria-hidden="true" class="glyphicon glyphicon-circle-arrow-right"></span></a></div>
+</div>
+<div ng-show="listesCtrl.step==2" id="choix">
+    <h1 class="shadow">Votre choix</h1>
+    <div class="list">
+        <div class="item" ng-repeat="product in listesCtrl.includeItems">
+            <img src="{{product.image}}">
+            <span class="text">
+                 {{product.title}}
+               </span>
+        </div>
+
+
+        <div class="btn btn-primary back" ng-click="listesCtrl.changeView()"><span aria-hidden="true" class="glyphicon glyphicon-circle-arrow-left"></span><span> Retour au choix précédent</span></div>
+    </div></div>
+
 </body>
+</html>
