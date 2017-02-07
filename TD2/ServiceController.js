@@ -1,4 +1,4 @@
-ServiceApp.controller('serviceController', ['$scope','$http', function($scope, $http){
+ServiceApp.controller('ServiceController', ['$scope','$http', function($scope, $http){
 var self=this;
 $scope.code="";
 this.services= [
@@ -67,7 +67,7 @@ this.services= [
     return res;
   }
 
-  $http.get('js/promo.json').then(successCallback,errorCallback);
+  $http.get('promo.json').then(successCallback,errorCallback);
 
     function successCallback(data) {
         self.promo=data;
