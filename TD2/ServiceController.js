@@ -1,6 +1,6 @@
-ServiceApp.controller('ServiceController', ['$scope','$http', function($scope, $http){
+ServiceApp.controller('ServiceController', ['$http', function($http){
 var self=this;
-$scope.code="";
+
 this.services= [
       {
           "name": "Web Development",
