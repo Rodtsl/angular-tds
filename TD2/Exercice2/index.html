@@ -19,6 +19,7 @@
 
 </head>
 <body data-ng-controller="ContactController as ConCtrl">
+<div class="panel panel-primary">
 <div class="panel-heading">Contacts</div>
 <div class="panel-body">
     <input type="text" placeholder="Filtrer...">
@@ -29,25 +30,25 @@
             <td >{{contact.prenom}}</td>
             <td >{{contact.mail}}</td>
             <td>
-                <a class="btn btn-info btn-xs" href="" data-ng-click="toUpdate(contact)"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>&nbsp;
-
+                <a class="btn btn-info btn-xs" href="" data-ng-click="ConCtrl.toUpdate(contact)"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>&nbsp;
+                <a class="btn btn-danger btn-xs" href="" data-ng-click="ConCtrl.delete(contact)"><span class="glyphicon glyphicon-remove-circle" aria-hidden="true"></span></a>
             </td></tr><!-- end ngRepeat: contact in contacts |NotDeletedFilter |filter:q as results -->
         <tr><td colspan="4">
-            <a href="" data-ng-click="ConCtrl.operation=1" class="btn btn-primary">Ajouter...</a>
+            <a href="" data-ng-click="ConCtrl.toadd=1" class="btn btn-primary">Ajouter...</a>
             </a></td></tr>
         </tbody></table>
-    <fieldset data-ng-show="ConCtrl.operation==1" class="container form-group form-inline" style="">
-        <legend class="ng-binding">Ajouter un contact</legend>
+    <fieldset data-ng-show="ConCtrl.toadd==1" class="container form-group form-inline" style="">
+        <legend class="ng-binding">{{ConCtrl.operation}} un contact</legend>
         <form name="frmContact" data-ng-submit="frmContact.$valid &amp;&amp; update()" novalidate="" class="ng-pristine ng-invalid ng-invalid-required ng-valid-email">
-            <input class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" type="text" data-ng-model="tmpContact.nom" placeholder="Entrez un nom..." required="" style="">
-            <input class="form-control ng-pristine ng-untouched ng-valid" type="text" data-ng-model="tmpContact.prenom" placeholder="Prénom...">
-            <input class="form-control ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required" type="email" data-ng-model="tmpContact.email" placeholder="Adresse email..." required="">
-            <input type="submit" value="Valider" class="btn btn-primary">
-            <input type="button" value="Annuler" data-ng-click="ConCtrl.operation=0" class="btn btn-primary">
+            <input class="form-control ng-pristine ng-invalid ng-invalid-required ng-touched" type="text" data-ng-model="ConCtrl.tmpContact.nom" placeholder="Entrez un nom..." required="" style="">
+            <input class="form-control ng-pristine ng-untouched ng-valid" type="text" data-ng-model="ConCtrl.tmpContact.prenom" placeholder="Prénom...">
+            <input class="form-control ng-pristine ng-untouched ng-valid-email ng-invalid ng-invalid-required" type="email" data-ng-model="ConCtrl.tmpContact.mail" placeholder="Adresse email..." required="">
+            <input type="submit" value="Valider" class="btn btn-primary" data-ng-click="ConCtrl.update()">
+            <input type="button" value="Annuler" data-ng-click="ConCtrl.toadd=0" class="btn btn-primary">
         </form>
     </fieldset>
 </div>
-
+</div>
 
 </body>
 </html>
