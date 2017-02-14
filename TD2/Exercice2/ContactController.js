@@ -22,6 +22,6 @@ this.contacts= [
         "mail":"alexis@trash-talk.tx"
     }
     ];
-
+this.operation=0;
 
 });
