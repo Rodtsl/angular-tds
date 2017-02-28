@@ -1,22 +1,36 @@
-<html lang="fr" ng-app="CurrencyApp">
+<html lang="fr" ng-app="currencyApp">
 <head>
-    <meta charset="UTF-8">
-    <title>Services</title>
-    <script src="angular.min.js"></script>
-    <script src="app/currencyApp.js"></script>
-    <script src="app/currencyController.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-</head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.1/angular-cookies.min.js"></script>
+    <meta charset="utf-8">
+    <title>Exo 5</title>
+    <script type="text/javascript" src="app/currencyApp.js"></script>
+    <script type="text/javascript" src="app/currencyController.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+</head>
 <body data-ng-controller="currencyController as currency" ng-view class="toggle ng-scope">
 <div class="panel panel-primary" data-ngcloak>
-    <div class="panel-heading">Ex 3 : Currency Application</div>
+    <div class="panel-heading">Ex 5 : Currency Application</div>
     <div class="panel-boddy">
         <form class="form-group form-inline ng-valid ng-dirty ng-valid-parse" style>
-            <input data-ng-model="what" type="text" class="form-control ng-valid ng-dirty ng-valid-parse ng-touched" size="5" style>
+            <input data-ng-model="currency.what" type="text" class="form-control ng-valid ng-dirty ng-valid-parse ng-touched" size="5" style>
 
-            <select data-ng-model="from" data-ng-options="v.code + ' - ' + v.name for (k, v) in currency.currencies" class="form-control ng-pristine ng-untouched ng-valid">
+            <select data-ng-model="currency.from" data-ng-options="v.code + ' - ' + v.name for (k, v) in currency.currencies" class="form-control ng-pristine ng-untouched ng-valid">
             </select>
+            <a href="#" data-ng-click="currency.swap()">↔</a>
+            <select data-ng-model="currency.to" data-ng-options="v.code + ' - ' + v.name for (k, v) in currency.currencies" class="form-control ng-pristine ng-untouched ng-valid">
+            </select>
+            <input type="button" value="Convertir" class="btn btn-primary" data-ng-click="currency.getResult()">
+            <input data-ng-model="currency.result" type="text" class="form-control ng-valid ng-dirty ng-valid-parse ng-touched" size="5" style>
         </form>
     </div>
 </div>
