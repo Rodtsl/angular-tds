@@ -15,17 +15,17 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TD3/Exercice1/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="51">
-              <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
+            <state relative-caret-position="168">
+              <caret line="28" column="61" lean-forward="true" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="currencyController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="currencyController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/TD3/Exercice1/app/currencyController.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="267">
@@ -117,8 +117,8 @@
         <option value="$PROJECT_DIR$/TD2/Exercice2/currency.json" />
         <option value="$PROJECT_DIR$/TD3/Exercice1/currencyController.js" />
         <option value="$PROJECT_DIR$/TD3/Exercice1/app/currencyApp.js" />
-        <option value="$PROJECT_DIR$/TD3/Exercice1/index.html" />
         <option value="$PROJECT_DIR$/TD3/Exercice1/app/currencyController.js" />
+        <option value="$PROJECT_DIR$/TD3/Exercice1/index.html" />
       </list>
     </option>
   </component>
@@ -378,12 +378,12 @@
       <workItem from="1487057100087" duration="5535000" />
       <workItem from="1487063990443" duration="4474000" />
       <workItem from="1488283330741" duration="6097000" />
-      <workItem from="1488290202831" duration="1489000" />
+      <workItem from="1488290202831" duration="3144000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39338000" />
+    <option name="totallyTimeSpent" value="40993000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -752,14 +752,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/TD3/Exercice1/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="27" column="21" lean-forward="true" selection-start-line="27" selection-start-column="21" selection-end-line="27" selection-end-column="21" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/TD3/Exercice1/app/currencyController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="267">
@@ -767,6 +759,14 @@
           <folding>
             <element signature="e#0#42#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TD3/Exercice1/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="28" column="61" lean-forward="true" selection-start-line="28" selection-start-column="61" selection-end-line="28" selection-end-column="61" />
+          <folding />
         </state>
       </provider>
     </entry>
