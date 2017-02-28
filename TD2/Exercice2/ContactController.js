@@ -42,8 +42,5 @@ this.toadd=0;
         self.operation="Modifier";
         self.tmpContact=self;
         self.toadd=1;
-
-
     }
-
 });
