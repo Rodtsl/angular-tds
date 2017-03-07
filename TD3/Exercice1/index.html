@@ -31,10 +31,34 @@
             </select>
             <input type="button" value="Convertir" class="btn btn-primary" data-ng-click="currency.getResult()">
             <input data-ng-model="currency.result" type="text" class="form-control ng-valid ng-dirty ng-valid-parse ng-touched" size="5" readonly="readonly">
-                <input type="checkbox" ><label>Historique</label>
+                <input type="checkbox" data-ng-model="histo"><label>Historique</label>
+
 
         </form>
+
+
+
     </div>
+</div>
+<div class="histo" ng-show="histo">
+    <table>
+        <thead>
+        <tr>
+            <th>De</th>
+            <th>En</th>
+            <th>Taux</th>
+            <th>Montant</th>
+            <th>Date</th>
+            <th>Delta</th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr ng-repeat="conversion in historique" conv-histo></tr>
+        </tbody>
+
+    </table>
+
 </div>
 </body>
 </html>
