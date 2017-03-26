@@ -1,9 +1,9 @@
  
-<b>Les TDs d'Angular</b>
+<b>Les TDs d'Angular</b><br/>
 <i>Module du cours de Client riche animé par J-C Héron</i>
-
-<b>TD1 :</b> Terminé
-<b>TD2 :</b> Terminé
-<b>TD3 :</b> Tout les points ne sont pas réalisés
-<b>Browserify :</b> Terminé
-<b>Route :</b> Absence justifié.
+<br/>
+<b>TD1 :</b> Terminé<br/>
+<b>TD2 :</b> Terminé<br/>
+<b>TD3 :</b> Tout les points ne sont pas réalisés<br/>
+<b>Browserify :</b> Terminé.<br/>
+<b>Route :</b> Absence justifié.<br/>
